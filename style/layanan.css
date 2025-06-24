@@ -1,0 +1,4 @@
+.layanan-card:active {
+  background-color: #d4edda; /* hijau muda */
+  transform: scale(0.98);
+}
