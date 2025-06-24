@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pengaduan Warga – Desa Sukasejati</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Form Pengaduan Warga</h2>
+    <p class="text-center mb-4">Silakan isi formulir di bawah ini untuk menyampaikan keluhan, aspirasi, atau saran kepada pemerintah Desa Sukasejati.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form action="simpan_pengaduan.php" method="POST">
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="nama" name="nama" required>
+          </div>
+          <div class="mb-3">
+            <label for="kontak" class="form-label">Nomor Kontak / WA (opsional)</label>
+            <input type="text" class="form-control" id="kontak" name="kontak">
+          </div>
+          <div class="mb-3">
+            <label for="jenis" class="form-label">Kategori Pengaduan</label>
+            <select class="form-select" id="jenis" name="jenis">
+              <option value="infrastruktur">Infrastruktur</option>
+              <option value="layanan">Layanan Publik</option>
+              <option value="lingkungan">Lingkungan</option>
+              <option value="keamanan">Keamanan</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="pesan" class="form-label">Isi Pengaduan</label>
+            <textarea class="form-control" id="pesan" name="pesan" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Kirim Pengaduan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
