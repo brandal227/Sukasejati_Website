@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Ajuan KK/KTP – Desa Sukasejati</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container py-5">
+    <h2 class="text-center mb-4">Form Pengajuan Surat Pengantar KK / KTP</h2>
+    <p class="text-center mb-4">Silakan isi data berikut secara lengkap untuk pengajuan pembuatan atau perubahan Kartu Keluarga / KTP.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form action="proses_kk_ktp.php" method="POST">
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama Lengkap</label>
+            <input type="text" name="nama" id="nama" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="nik" class="form-label">NIK</label>
+            <input type="text" name="nik" id="nik" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="jenis_pengajuan" class="form-label">Jenis Pengajuan</label>
+            <select name="jenis_pengajuan" id="jenis_pengajuan" class="form-select" required>
+              <option value="">-- Pilih Jenis Pengajuan --</option>
+              <option value="kk_baru">Pembuatan KK Baru</option>
+              <option value="ktp_baru">Pembuatan KTP Baru</option>
+              <option value="perubahan_data">Perubahan Data</option>
+              <option value="hilang">Penggantian karena Hilang/Rusak</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="alamat" class="form-label">Alamat Lengkap</label>
+            <textarea name="alamat" id="alamat" class="form-control" rows="3" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="kontak" class="form-label">Nomor Kontak / WhatsApp</label>
+            <input type="text" name="kontak" id="kontak" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="keterangan" class="form-label">Keterangan Tambahan</label>
+            <textarea name="keterangan" id="keterangan" class="form-control" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Ajukan Permohonan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
