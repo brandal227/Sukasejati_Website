@@ -1,1 +1,48 @@
+html
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: Arial; padding: 20px;}
+      label { display: block; margin-bottom: 10px;}
+    </style>
+  </head>
+  <body>
+    <h2>Form Pengaduan Warga</h2>
 
+    <form id="pengaduanForm">
+      <label>Nama:
+        <input type="text" name="nama" required>
+      </label>
+
+      <label>Kategori:
+        <select name="kategori" required>
+          <option value="Layanan Publik">Layanan Publik</option>
+          <option value="Infrastruktur">Infrastruktur</option>
+          <option value="Kesehatan">Kesehatan</option>
+        </select>
+      </label>
+
+      <label>Pesan:
+        <textarea name="pesan" rows="4" required></textarea>
+      </label>
+
+      <button type="submit">Kirim</button>
+    </form>
+
+    <script>
+      document.getElementById("pengaduanForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        const data = new FormData(this);
+        fetch(location.href, {
+          method: "POST",
+          body: data
+})
+.then(res => res.text())
+.then(msg => alert(msg))
+.catch(err => alert("Gagal mengirim!"));
+});
+    </script>
+  </body>
+</html>
